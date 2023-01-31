@@ -1,5 +1,7 @@
 <template>
-  <div>y</div>
+  <div style="background: red">
+    ddddddddd
+  </div>
 </template>
 
 <script setup lang="ts">
