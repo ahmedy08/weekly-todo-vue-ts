@@ -11,11 +11,11 @@
 <script setup lang="ts">
 import BaseNav from './components/BaseNav.vue'
 import ViewHeader from '@/components/ViewHeader.vue'
-import { ref, watch} from "vue";
+import {Ref, ref, watch} from "vue";
 
-const width = ref(70)
-const height = ref(60)
-const marginTop = ref(6)
+const width = ref(70) as Ref<number>
+const height = ref(60) as Ref<number>
+const marginTop = ref(6) as Ref<number>
 
 const setFullSize = (_width: number, _height: number, _marginTop: number) => {
   width.value = _width
@@ -28,11 +28,10 @@ const setSmallSize = (_width: number, _height: number, _marginTop: number) => {
   marginTop.value = _marginTop
 }
 
-watch(() => [width, height], (_width, _height) => {
-  // @ts-ignore
-  width.value = _width
-  // @ts-ignore
-  height.value = _height
+watch(() => [width, height], ([_width, _height]) => {
+  // TODO: ask a experienced person 'is this a valid solutipn'
+  width.value = _width.value
+  height.value = _height.value
 })
 
 
