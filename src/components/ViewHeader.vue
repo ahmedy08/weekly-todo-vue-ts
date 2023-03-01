@@ -17,8 +17,7 @@ const setToSmallSize = () => {
   emit('smallSize', 70, 60, 6)
 }
 const setToFullSize = () => {
-  console.log('worked')
-  emit('fullSize', 90, 90, 3)
+  emit('fullSize', 100, 100, 0)
 }
 
 </script>

@@ -9,14 +9,15 @@
 </template>
 
 <script setup lang="ts">
-import BaseNav from './components/BaseNav.vue'
+import BaseNav from '@/components/BaseNav.vue'
 import ViewHeader from '@/components/ViewHeader.vue'
-import {Ref, ref, watch} from "vue";
+import { ref, watch } from 'vue'
 
-const width = ref(70) as Ref<number>
-const height = ref(60) as Ref<number>
-const marginTop = ref(6) as Ref<number>
+const width = ref<number> (100)
+const height = ref<number> (100)
+const marginTop = ref<number> (0)
 
+// FIXME: Setting size is flushing when browser refresh
 const setFullSize = (_width: number, _height: number, _marginTop: number) => {
   width.value = _width
   height.value = _height
@@ -29,11 +30,10 @@ const setSmallSize = (_width: number, _height: number, _marginTop: number) => {
 }
 
 watch(() => [width, height], ([_width, _height]) => {
-  // TODO: ask a experienced person 'is this a valid solutipn'
+  // TODO: ask an experienced person 'is this a valid solution'
   width.value = _width.value
   height.value = _height.value
 })
-
 
 </script>
 
@@ -44,9 +44,11 @@ watch(() => [width, height], ([_width, _height]) => {
     box-sizing: border-box;
   }
   .app {
+    width: 100%;
+    height: 100%;
     margin: auto;
     border: 1px solid transparent;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: -10px -10px 25px rgba(0,0,0,0.4), 10px 10px 20px rgba(0,0,0,0.4);
   }
 
 </style>

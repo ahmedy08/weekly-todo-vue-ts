@@ -1,6 +1,6 @@
 <template>
-  <div class="todo-wrapper">
-    ddddddddd
+  <div class="todo-view">
+    Todo View
   </div>
 </template>
 
@@ -9,9 +9,9 @@
 </script>
 
 <style scoped>
-.todo-wrapper {
-  background: rgba(84,166,52,0.69);
-  height: calc(100% - 1.5rem);
+.todo-view {
+  background: green;
+  height: 100%
 }
 
 </style>
